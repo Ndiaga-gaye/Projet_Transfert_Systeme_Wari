@@ -61,7 +61,7 @@ class Transaction
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $DateEmvoie;
+    private $DateEnvoie;
 
     /**
      * @ORM\Column(type="integer")
@@ -72,6 +72,11 @@ class Transaction
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="transactions")
      */
     private $User;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $Montant;
 
     public function getId(): ?int
     {
@@ -174,14 +179,14 @@ class Transaction
         return $this;
     }
 
-    public function getDateEmvoie(): ?string
+    public function getDateEnvoie(): ?string
     {
-        return $this->DateEmvoie;
+        return $this->DateEnvoie;
     }
 
-    public function setDateEmvoie(string $DateEmvoie): self
+    public function setDateEnvoie(string $DateEnvoie): self
     {
-        $this->DateEmvoie = $DateEmvoie;
+        $this->DateEnvoie = $DateEnvoie;
 
         return $this;
     }
@@ -206,6 +211,18 @@ class Transaction
     public function setUser(?User $User): self
     {
         $this->User = $User;
+
+        return $this;
+    }
+
+    public function getMontant(): ?int
+    {
+        return $this->Montant;
+    }
+
+    public function setMontant(int $Montant): self
+    {
+        $this->Montant = $Montant;
 
         return $this;
     }

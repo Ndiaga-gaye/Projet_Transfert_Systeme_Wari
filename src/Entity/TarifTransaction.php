@@ -33,6 +33,7 @@ class TarifTransaction
      */
     private $valeur;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -73,4 +74,5 @@ class TarifTransaction
 
         return $this;
     }
+    
 }
